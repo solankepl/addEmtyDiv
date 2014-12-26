@@ -1,0 +1,40 @@
+.mainContainer{
+	width: 1000px;
+	height: 200px;
+	border: 1px solid #FF00FF;
+	position: relative;
+}
+
+.colMain{
+	width: 150px;
+	height: 150px;
+	border: 1px solid #F0FF0F;
+	position: absolute;
+	left: 50px;
+	top:25px;
+}
+
+.col{
+    width: 150px;
+    height: 150px;
+    border: 1px solid #F0FF0F;
+    /* position: absolute;
+    left: 0px;
+    top:0px; */
+}
+
+.col p{
+	text-align: center;
+	font-size:50px;
+}
+
+.dataContainer{
+    border: 1px solid #FF0000;
+    position: absolute;
+    width: 200px;
+    height: 2000px;
+    float: left;
+    right: 0px;
+    top: 0px;
+    padding-right:50px;
+}

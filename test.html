@@ -1,0 +1,73 @@
+
+<html>
+<head>
+
+<title>world book</title>
+    <link href="css/layout.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="javascript/jquery.js"></script> 	
+
+<script LANGUAGE="JavaScript" TYPE="text/javascript"> 
+
+$(document).ready(function() {
+    var leftPos=50;
+    for(var i=1;i<5;i++){
+        $(".mainContainer .colMain:nth-child("+i+")").css("left",leftPos+"px");
+        leftPos += $(".colMain").width()+20;
+    }
+
+    for(var i=1;i<20;i++){
+	    var str = "<div id='drag_"+i+"' class='col' style='background-color:"+getRandomColor()+";'><p>"+i+"</p></div>"
+        $(".dataContainer").append(str);
+    }
+	startEmptyFun();
+	
+	$("#emptyBtn").click(function(){
+        emptyDivFun();
+    }); 
+});
+
+function emptyDivFun(){
+	var tempNum = Math.floor(Math.random() * 4) + 1;	
+	var temp = $(".dataContainer .col:nth-child("+1+")");
+	$(".mainContainer .colMain:nth-child("+tempNum+")").empty();	 
+	$(".mainContainer .colMain:nth-child("+tempNum+")").append(temp);
+}
+
+function startEmptyFun(){
+	for(var i=1;i<5;i++){
+		var a = $(".dataContainer").find("#drag_"+i);
+		$(".mainContainer .colMain:nth-child("+i+")").append(a);
+	}
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF'.split('');
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+</script>
+
+</head>
+
+<body>
+<div class="mainContainer">
+    <div class="colMain"></div>
+    <div class="colMain"></div>
+    <div class="colMain"></div>
+    <div class="colMain"></div>
+</div>
+<button id="emptyBtn">emmpty</button>
+
+<div class="dataContainer">
+
+</div>
+
+
+</body>
+</html>
+
